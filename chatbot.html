@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chatbot</title>
+ <!-- Latest compiled and minified CSS -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+<style>
+
+</style>
+
+</head>
+<body>
+	 <div class="text-center">
+<h1><b>MarCon-Bot</b></h1>
+ <h3><b>Hey get your query here......</b></h3>
+</div>
+<div id="message_area">
+ 
+	</div>
+      
+
+
+      <textarea type="text" rows="3" cols="50" id="input" placeholder="Enter query here.........."></textarea>
+  </br>
+<!-- </div> -->
+<button type="button" id="submit" class="btn btn-success">Submit</button>
+
+
+</body>
+<script>
+	
+	$(document).ready(function(){
+	know={
+		"Hey":" &nbsp &nbsp &nbsp &nbsp &nbsp MarCon : hey how are yu doing",
+		"Who are yu":"&nbsp &nbsp &nbsp &nbsp &nbsp MarCon : MarCon-Bot Assistance of Shanawaz",
+		"What you will help me":"&nbsp &nbsp &nbsp &nbsp &nbsp MarCon : I will help you by give descriptions to you Thankyou !"
+	}
+
+	$("#submit").click(function(){
+		   var user = document.getElementById("input").value;
+	 document.getElementById("input").value="";
+	  document.getElementById("message_area").innerHTML +="you : "+ user +"<br>";
+		if(user in know)
+		{
+
+         document.getElementById("message_area").innerHTML +=know[user]+"<br><br>";
+         
+		}
+		else
+		{
+			document.getElementById("message_area").innerHTML += "Sorry could not understand<br><br><br>";
+			
+		}
+
+	})	
+	})
+	
+
+</script>
+</html>
